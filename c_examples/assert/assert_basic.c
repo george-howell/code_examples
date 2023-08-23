@@ -10,6 +10,7 @@
 /*------------------------------------------- INCLUDES ---------------------------------------------------------------*/
 
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "main.h"
 
@@ -36,7 +37,20 @@ void assert_basic(void)
 
 	a = 0;
 
+	// this will assert if the outcome is false
 	assert(a != 0);
+}
 
-	printf("%d\n", a);
+/**
+ * @brief 	assert if pointer is NULL
+ */
+void assert_pointer(void)
+{
+	int *a = malloc(sizeof(int));
+
+	assert(a != NULL);
+
+	int *b = NULL;
+
+	assert(b != NULL);
 }

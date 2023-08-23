@@ -31,5 +31,6 @@ extern "C" {
 #endif
 
 void assert_basic(void);
+void assert_pointer(void);
 
 #endif /* _MAIN_H_ */
