@@ -37,6 +37,7 @@ int main(void)
 
 	fftw_basics_init_value_complex_h();
 	fftw_basics_init_array_complex_h();
+	fftw_basics_init_cast_array_complex_h();
 
 	/*
 	 * FFT

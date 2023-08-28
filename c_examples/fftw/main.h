@@ -28,6 +28,7 @@ extern "C" {
 
 void fftw_basics_value_init(void);
 void fftw_basics_array_init(void);
+void fftw_basics_init_cast_array_complex_h(void);
 
 /*
  * Basic - With Complex.h
