@@ -3,9 +3,7 @@
  * 
  * @file    main.c
  *
- * @brief   brief description
- * 
- * detailed description
+ * @brief   mufft example
  *  
  * @par
  * @author 	george_howell
