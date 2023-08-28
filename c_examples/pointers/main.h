@@ -41,6 +41,12 @@ void pointers_structs_init_struct_array(void);
 void pointers_structs_init_struct_within_struct(void);
 void pointers_structs_init_struct_within_struct_pointer(void);
 
+/*
+ * Pointers Casting
+ */
+
+void pointers_assign_single_p_to_p2p(void);
+
 #ifdef __cplusplus
 }
 #endif

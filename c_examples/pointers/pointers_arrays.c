@@ -1,7 +1,7 @@
 /***********************************************************************************************************************
- * @file    main.c
+ * @file    pointers_cast.c
  *
- * @brief   pointer examples
+ * @brief   pointers and arrays
  *  
  * @par
  * @author 	ghowell
@@ -9,10 +9,18 @@
 
 /*------------------------------------------- INCLUDES ---------------------------------------------------------------*/
 
+#include <stdio.h>
+#include <stdlib.h>
+
 #include "main.h"
 
 /*------------------------------------------- EXTERN VARIABLES -------------------------------------------------------*/
 /*------------------------------------------- PRIVATE MACROS AND DEFINES ---------------------------------------------*/
+
+#define N					(6U)
+#define NROWS				(3U)
+#define NCOLS				(2U)
+
 /*------------------------------------------- PRIVATE TYPEDEFS -------------------------------------------------------*/
 /*------------------------------------------- STATIC VARIABLES -------------------------------------------------------*/
 /*------------------------------------------- GLOBAL VARIABLES -------------------------------------------------------*/
@@ -20,31 +28,32 @@
 /*------------------------------------------- STATIC FUNCTIONS -------------------------------------------------------*/
 /*------------------------------------------- GLOBAL FUNCTIONS -------------------------------------------------------*/
 
-int main(void)
+/**
+ * @brief 	assign a single pointer to pointer to pointer
+ */
+void pointers_assign_single_p_to_p2p(void)
 {
-    /*
-     * Pointers Basics
-     */
+	int i, j;
 
-    pointers_init_value();
-    pointers_init_value_mem_alloc();
-    pointers_init_array();
-    pointers_init_array_mem_alloc();
+	int arr[N] = {1,2,3,4,5,6};
 
-    /*
-     * Pointer Structures
-     */
+	int *pArr = arr;
 
-    pointers_structs_init_struct_val();
-    pointers_structs_init_struct_array();
-    pointers_structs_init_struct_within_struct();
-    pointers_structs_init_struct_within_struct_pointer();
+	int **ppArr = (int**)malloc(NROWS*sizeof(int*));
 
-    /*
-     * Pointers Casting
-     */
+	for (i = 0; i < NROWS; i++)
+	{
+		*(ppArr+i) = &pArr[0];
+		pArr += NCOLS;
+	}
 
-    pointers_assign_single_p_to_p2p();
-
-    return 0;
+	printf("pointers_cast_as_p2p\n");
+	for (i = 0; i < NROWS; i++)
+	{
+		for (j = 0; j < NCOLS; j++)
+		{
+			printf("%d\t", ppArr[i][j]);
+		}
+		printf("\n");
+	}
 }
